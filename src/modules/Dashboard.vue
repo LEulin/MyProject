@@ -21,6 +21,9 @@
 
 <style scoped lang="scss">
 @import"assets/colors.scss";
+.jumbotron{
+  color: $primary !important;
+}
 #card {
   margin-left: $margin-left !important;
   margin-top: $margin-top !important; 

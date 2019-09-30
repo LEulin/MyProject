@@ -11,14 +11,16 @@
           </b-col>
           <b-col md="6">
             <b-card-body title="Personal Info">
-                <hr>
+              <hr>
               <b-card-text>
                 <h6>Username: {{username}}</h6>
                 <h6>Email: {{email}}</h6>
                 <h6 type="password">Password: {{password}}</h6>
               </b-card-text>
-              <center><p>Do you want to edit your account?</p >
-              <router-link to="/Update">Edit</router-link></center>
+              <center>
+                <p>Do you want to edit your account?</p>
+                <router-link to="/Update">Edit</router-link>
+              </center>
             </b-card-body>
           </b-col>
         </b-row>
@@ -27,10 +29,15 @@
   </div>
 </template>
 
-<style>
-.jumbotron{
-    padding: 20px;
-    text-align: center;
+<style scoped lang="scss">
+@import "assets/colors.scss";
+// .jumbotron{
+//   color: $primary !important;
+// }
+.jumbotron {
+  padding: 20px;
+  text-align: center;
+  color: $primary !important;
 }
 #card {
   margin-top: 50px;
@@ -38,7 +45,7 @@
 }
 </style>
 <script>
-import AUTH from 'services/auth'
+import AUTH from "services/auth";
 export default {
   data() {
     return {
@@ -48,8 +55,8 @@ export default {
     };
   },
   methods: {
-    update: function(){
-      AUTH.update(this.username,this.email, this.password)
+    update: function() {
+      AUTH.update(this.username, this.email, this.password);
     }
   }
 };

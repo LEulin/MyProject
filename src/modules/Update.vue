@@ -57,7 +57,6 @@ export default {
         sessionStorage.setItem("Email", this.email),
         sessionStorage.setItem("Password", this.password),
         AUTH.save(this.username, this.email, this.password);
-      ROUTER.push("/PersonalInfo");
     }
   }
 };

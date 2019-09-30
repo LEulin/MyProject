@@ -43,7 +43,9 @@
 </template>
 <style scoped lang="scss">
 @import "assets/colors.scss";
-
+.jumbotron{
+  color: $primary !important;
+}
 #username {
   color: $primary !important;
 }
