@@ -19,23 +19,24 @@
   </div>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
+@import"assets/colors.scss";
 #card {
-  margin-top: 30px;
-  margin-left: 400px;
+  margin-left: $margin-left !important;
+  margin-top: $margin-top !important; 
 }
 .jumbotron{
-    padding:20px;
-    text-align: center;
+    padding: $padding !important;
+    text-align: $text-align !important;
+    color: $primary !important;
 }
 #image {
-  width: 250px;
-  height: 220px;
+  width: $width !important;
+  height: $height !important;
 }
 </style>
 
 <script>
-import ROUTER from "router";
 export default {
   name: "card",
   data() {

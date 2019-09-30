@@ -37,7 +37,6 @@
 </style>
 <script>
 export default {
-  // name: "container",
   data() {
     return {
       username: sessionStorage.getItem("Username"),
