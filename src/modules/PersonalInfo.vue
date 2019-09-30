@@ -17,6 +17,8 @@
                 <h6>Email: {{email}}</h6>
                 <h6 type="password">Password: {{password}}</h6>
               </b-card-text>
+              <center><p>Do you want to edit your account?</p >
+              <router-link to="/Update">Edit</router-link></center>
             </b-card-body>
           </b-col>
         </b-row>
@@ -36,6 +38,7 @@
 }
 </style>
 <script>
+import AUTH from 'services/auth'
 export default {
   data() {
     return {
@@ -44,5 +47,10 @@ export default {
       password: sessionStorage.getItem("Password")
     };
   },
+  methods: {
+    update: function(){
+      AUTH.update(this.username,this.email, this.password)
+    }
+  }
 };
 </script>

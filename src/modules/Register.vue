@@ -48,6 +48,7 @@
           <div class="row">
             <label id="conpass" for="inputConPassword">Confirm Password:</label>
             <input
+              v-model="content.conpassword"
               required
               type="password"
               class="form-control"
@@ -104,15 +105,26 @@ export default {
     submit: function(e) {
       e.preventDefault();
       sessionStorage.setItem("Username", this.content.username),
-      sessionStorage.setItem("Email", this.content.email),
-      sessionStorage.setItem("Password", this.content.password);
-        if(this.content.username == '' || this.content.email == '' || this.content.password == '' || this.content.conpassword == ''){
-          alert("Input is empty.");
-        }else if(this.content.password != this.content.conpassword){
-          alert("Passwrod missmatch!")
-        }else{
-          AUTH.register(this.content.username, this.content.password);
-        }
+        sessionStorage.setItem("Email", this.content.email),
+        sessionStorage.setItem("Password", this.content.password);
+      if (
+        this.content.username == "" ||
+        this.content.email == "" ||
+        this.content.password == "" ||
+        this.content.conpassword == ""
+      ) {
+        alert("Input is empty.");
+      } else if (this.content.password != this.content.conpassword) {
+        alert("Password missmatch!");
+      } else {
+        AUTH.register(
+          this.content.username,
+          this.content.password,
+          this.content.email,
+          this.content.conpassword
+        );
+        alert("you are registered");
+      }
     }
   }
 };

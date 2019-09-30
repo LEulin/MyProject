@@ -8,12 +8,17 @@ export default {
     getUser(user) {
         this.user = user
     },
-    register(username, password) {
-        this.registeredUser.push({
-        username : username,
-        password : password
-        })
-        ROUTER.push("/Login");
+    register(username, password, email, confirmpassword) {
+        if (username == '' || password == '' || email == '' || password != confirmpassword) {
+            ROUTER.push("/Register")
+        } else {
+            this.registeredUser.push({
+                username: username,
+                password: password,
+                email: email
+            });
+            ROUTER.push("/Login");
+        }
     },
     login(username, password) {
         for (let i = 0; i < this.registeredUser.length; i++) {
@@ -28,6 +33,14 @@ export default {
     logout() {
         this.user = null
         ROUTER.push('/Login')
+    },
+    update() {
+        this.user = null
+        ROUTER.push('/Update')
+    },
+    save() {
+        this.user = null
+        ROUTER.push('/PersonalInfo')
     }
 
 }
