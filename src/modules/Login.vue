@@ -6,7 +6,7 @@
           <center>
             <h1>Login</h1>
           </center>
-          <hr>
+          <hr />
           <div class="row">
             <label id="username" for="loginUsername">Username:</label>
             <input
@@ -15,10 +15,10 @@
               name="username"
               class="form-control"
               placeholder="Enter Username"
-            > 
-            <br>
+            />
+            <br />
           </div>
-          <br>
+          <br />
           <div class="row">
             <label id="pass" for="loginPassword">Password:</label>
             <input
@@ -29,13 +29,13 @@
               class="form-control"
               id="loginPassword"
               placeholder="Enter Password"
-            >
+            />
           </div>
-          <br>
+          <br />
           <button id="btnLogin" class="btn btn-primary" @click="submit">
             <h6>Login</h6>
           </button>
-          <br>
+          <br />
         </form>
       </div>
     </center>
@@ -43,7 +43,7 @@
 </template>
 <style scoped lang="scss">
 @import "assets/colors.scss";
-.jumbotron{
+.jumbotron {
   color: $primary !important;
 }
 #username {
@@ -54,10 +54,12 @@
 }
 </style>
 <script>
-import AUTH from 'services/auth'
+import AUTH from "services/auth";
+import ROUTER from "router";
+// import jquery from "jquery";
 export default {
   data() {
-    AUTH
+    AUTH;
     return {
       username: "",
       password: ""
@@ -66,9 +68,12 @@ export default {
   methods: {
     submit: function(e) {
       e.preventDefault();
-      AUTH.login(this.username, this.password)
-    },
-
+      let user = AUTH.login(this.username, this.password);
+      AUTH.setUser(user);
+      if (user !== null) {
+        ROUTER.push("/Dashboard");
+      }
+    }
   }
 };
 </script>

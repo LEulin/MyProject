@@ -1,8 +1,5 @@
 <template>
   <div id="container">
-    <div class="jumbotron">
-      <h1>Personal Information</h1>
-    </div>
     <div id="card">
       <b-card no-body class="overflow-hidden" style="max-width: 540px;">
         <b-row no-gutters>

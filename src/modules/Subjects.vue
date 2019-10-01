@@ -1,8 +1,5 @@
 <template>
   <div>
-    <div class="jumbotron">
-      <h1>Subjects</h1>
-    </div>
     <div class="container">
       <div class="row">
         <div class="col">
@@ -28,11 +25,12 @@
                 </thead>
                 <tbody v-for="(item, index) in this.rows" :key="index">
                   <tr>
+                    <td>{{ item.course }}</td>
                     <td>{{ item.subject }}</td>
                     <td>{{ item.teacher }}</td>
                     <td>{{ item.time }}</td>
                     <td>{{ item.day }}</td>
-                    <td>{{ item.room }}</td>
+                    <td>{{ item.venue }}</td>
                   </tr>
                 </tbody>
               </table>
@@ -46,7 +44,6 @@
               id="card"
               img-top
               tag="article"
-              style="max-width: 30rem;"
               class="mb-2"
             >
               <b-form-group label-for="input-lg">
@@ -61,8 +58,8 @@
                 <label id="time">Day:</label>
                 <b-form-input v-model="content.day" id="day" size="sm"></b-form-input>
                 <label id="room">Venue:</label>
-                <b-form-input v-model="content.room" id="room" size="sm"></b-form-input>
-                <br>
+                <b-form-input v-model="content.venue" id="room" size="sm"></b-form-input>
+                <br />
                 <b-button variant="primary" @click="addItem">Add Subject</b-button>
               </b-form-group>
             </b-card>
@@ -74,7 +71,12 @@
 </template>
 
 
-<style>
+<style scoped lang = "scss">
+@import"assets/colors.scss";
+#card{
+    margin-left: 20px;
+    width:300px;
+}
 .jumbotron {
   padding: 20px;
   text-align: center;
@@ -92,7 +94,7 @@ export default {
         teacher: "",
         time: "",
         day: "",
-        room: ""
+        venue: ""
       }
     };
   },
@@ -104,15 +106,26 @@ export default {
         teacher: this.content.teacher,
         time: this.content.time,
         day: this.content.day,
-        room: this.content.room
+        venue: this.content.venue
       };
-      this.rows.push(object);
-      this.content.course = "";
-      this.content.subject = "";
-      this.content.teacher = "";
-      this.content.time = "";
-      this.content.day = "";
-      this.content.room = "";
+      if (
+        this.content.course == "" ||
+        this.content.subject == "" ||
+        this.content.teacher == "" ||
+        this.content.time == "" ||
+        this.content.day == "" ||
+        this.content.venue == ""
+      ) {
+        alert("Input is empty.");
+      } else {
+        this.rows.push(object);
+        this.content.course = "";
+        this.content.subject = "";
+        this.content.teacher = "";
+        this.content.time = "";
+        this.content.day = "";
+        this.content.venue = "";
+      }
     }
   }
 };

@@ -1,8 +1,5 @@
 <template>
   <div>
-    <div class="jumbotron">
-      <h1>Dashboard</h1>
-    </div>
     <div id="card">
       <b-card no-body class="overflow-hidden" style="max-width: 540px;">
         <center>

@@ -8,7 +8,6 @@ import VueSidebarMenu from 'vue-sidebar-menu'
 import 'vue-sidebar-menu/dist/vue-sidebar-menu.css'
 import { CardPlugin } from 'bootstrap-vue'
 Vue.use(CardPlugin)
-
 Vue.config.productionTip = false
 Vue.use(VueSidebarMenu)
 Vue.use(BootstrapVue)
