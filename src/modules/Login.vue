@@ -43,14 +43,14 @@
 </template>
 <style scoped lang="scss">
 @import "assets/colors.scss";
-.jumbotron {
-  color: $primary !important;
+h1{
+  color: $warning !important;
 }
 #username {
-  color: $primary !important;
+  color: $warning !important;
 }
 #pass {
-  color: $primary !important;
+  color: $warning !important;
 }
 </style>
 <script>
@@ -69,9 +69,14 @@ export default {
     submit: function(e) {
       e.preventDefault();
       let user = AUTH.login(this.username, this.password);
-      AUTH.setUser(user);
-      if (user !== null) {
-        ROUTER.push("/Dashboard");
+      if (this.username == "" || this.password == "") {
+        this.$swal.fire("Please provide inputs","Inputs are required!","warning");
+      } else {
+        this.$swal.fire("Successfully Login!","Nice one!","success");
+        AUTH.setUser(user);
+        if (user !== null) {
+          ROUTER.push("/Dashboard");
+        }
       }
     }
   }

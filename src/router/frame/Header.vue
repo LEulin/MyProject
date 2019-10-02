@@ -1,7 +1,8 @@
 <template>
   <div>
-    <b-navbar toggleable="lg" type="dark" class="bg-dark" variant="info">
-      <b-navbar-brand href="#" class="text text-light" id="title">iTour</b-navbar-brand>
+    <b-navbar toggleable="lg" variant="info">
+      <center>
+      <b-navbar-brand href="#" class="text text-light" id="title">iTour</b-navbar-brand></center>
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
       <b-collapse id="nav-collapse" is-nav v-if="auth.user === null">
         <!-- Right aligned nav items -->
@@ -18,8 +19,9 @@
 <style scoped lang="scss">
 @import "assets/colors.scss";
 #title {
-  color: $danger !important;
+  color: $warning !important;
 }
+
 </style>
 <script>
 import ROUTER from "router"

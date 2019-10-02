@@ -32,7 +32,6 @@
 }
 #image {
   width: $width !important;
-  height: $height !important;
 }
 </style>
 

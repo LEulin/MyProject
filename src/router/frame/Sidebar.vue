@@ -33,7 +33,7 @@ export default {
           icon: "fa fa-chart-area",
         }
       ]
-    };
+    }; 
   }
 };
 </script> 

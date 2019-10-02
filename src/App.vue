@@ -8,7 +8,17 @@
     ></Sidebar>
   </div>
 </template>
-
+<style scoped lang="scss">
+@import "assets/colors.scss";
+#app{
+  background-image: $background-image !important;
+  size: $size !important;
+  background-repeat: $backgroud-repeat !important;
+  overflow: $overflow !important;
+  height: $height !important;
+  max-height: $max-height !important;
+}
+</style>
 <script>
 import Sidebar from "router/frame/Sidebar.vue";
 import Header from "router/frame/Header.vue";
@@ -22,3 +32,5 @@ export default {
   }
 };
 </script>
+
+

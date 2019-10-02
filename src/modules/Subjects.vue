@@ -12,6 +12,9 @@
               style="max-width: 40rem;"
               class="mb-2"
             >
+              <b-button variant="primary" @click="removeItem">Remove</b-button>
+              <br>
+              <br>
               <table class="table">
                 <thead>
                   <tr>
@@ -39,13 +42,7 @@
         </div>
         <div class="col">
           <center>
-            <b-card
-              text-align
-              id="card"
-              img-top
-              tag="article"
-              class="mb-2"
-            >
+            <b-card text-align id="card" img-top tag="article" class="mb-2">
               <b-form-group label-for="input-lg">
                 <label id="Subject">Course:</label>
                 <b-form-input v-model="content.course" id="subject" size="sm"></b-form-input>
@@ -72,14 +69,14 @@
 
 
 <style scoped lang = "scss">
-@import"assets/colors.scss";
-#card{
-    margin-left: 20px;
-    width:300px;
+@import "assets/colors.scss";
+#card {
+  margin-top: 100px;
+  margin-left: 20px;
+  width: 300px;
 }
-.jumbotron {
-  padding: 20px;
-  text-align: center;
+#card1{
+    margin-top: 100px;
 }
 </style>
 
@@ -116,8 +113,9 @@ export default {
         this.content.day == "" ||
         this.content.venue == ""
       ) {
-        alert("Input is empty.");
+        this.$swal.fire("Please provide inputs","Inputs are required!","warning");
       } else {
+        this.$swal.fire("Succesfully Added","Nice one!","success");
         this.rows.push(object);
         this.content.course = "";
         this.content.subject = "";
@@ -126,6 +124,17 @@ export default {
         this.content.day = "";
         this.content.venue = "";
       }
+    },
+    removeItem(){
+      var object = {
+        course: this.content.course,
+        subject: this.content.subject,
+        teacher: this.content.teacher,
+        time: this.content.time,
+        day: this.content.day,
+        venue: this.content.venue
+      }
+      this.rows.splice(object,1);
     }
   }
 };
