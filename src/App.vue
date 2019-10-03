@@ -1,6 +1,8 @@
 <template>
   <div id="app">
     <Header></Header>
+    <Sidebar id="side"
+    v-show="$route.path === '/Dashboard' || $route.path === '/Subjects' || $route.path === '/PersonalInfo' ? true : false"></Sidebar>
     <AppBody></AppBody>
   </div>
 </template>
@@ -14,15 +16,20 @@
   height: $height !important;
   max-height: $max-height !important;
 }
+#side{
+  margin-top: 55px;
+}
 </style>
 <script>
 import Header from "router/frame/Header.vue";
 import AppBody from "router/frame/Body.vue";
+import Sidebar from "router/frame/Sidebar.vue";
 export default {
   name: "app",
   components: {
     Header,
-    AppBody
+    AppBody,
+    Sidebar
   }
 };
 </script>

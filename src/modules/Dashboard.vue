@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <div id="card">
+  <div id="card">
+    <center>
       <b-card no-body class="overflow-hidden" style="max-width: 540px;">
         <center>
           <b-card-img id="image" :src="require('assets/user.png')" class="rounded-0"></b-card-img>
@@ -12,24 +12,21 @@
           </b-row>
         </center>
       </b-card>
-    </div>
+    </center>
   </div>
 </template>
 
 <style scoped lang="scss">
-@import"assets/colors.scss";
-.jumbotron{
-  color: $primary !important;
-}
+@import "assets/colors.scss";
 #card {
-  margin-left: $margin-left !important;
-  margin-top: $margin-top !important; 
+  // margin-left: $margin-left !important;
+  margin-top: $margin-top !important;
 }
-.jumbotron{
-    padding: $padding !important;
-    text-align: $text-align !important;
-    color: $primary !important;
-}
+// .jumbotron {
+//   padding: $padding !important;
+//   text-align: $text-align !important;
+//   color: $primary !important;
+// }
 #image {
   width: $width !important;
 }
@@ -42,7 +39,7 @@ export default {
     return {
       username: sessionStorage.getItem("Username")
     };
-  },
+  }
 };
 </script>
 

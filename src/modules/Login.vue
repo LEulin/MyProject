@@ -72,9 +72,10 @@ export default {
       if (this.username == "" || this.password == "") {
         this.$swal.fire("Please provide inputs","Inputs are required!","warning");
       } else {
-        this.$swal.fire("Successfully Login!","Nice one!","success");
+        this.$swal.fire("Please register first!","You need to register!","error");
         AUTH.setUser(user);
         if (user !== null) {
+          this.$swal.fire("Successfully Login!","Nice one!","success");
           ROUTER.push("/Dashboard");
         }
       }
