@@ -1,11 +1,14 @@
 let beforeEnter = (to, from, next) => {
-    if(to.tokenRequired === true){
-        next()
-    }else{
+    if (to.meta.tokenRequired === true) {
+        if (sessionStorage.getItem('Password') !== null) {
+            next();
+        } else {
+            next({ path: '/Login' })
+        }
+    } else {
         next()
     }
 }
-
 var devRoutes = []
 let app = require('./app.js')
 devRoutes = devRoutes.concat(app.default.routes)

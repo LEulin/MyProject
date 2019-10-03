@@ -43,6 +43,7 @@ import AUTH from "services/auth";
 export default {
   data() {
     return {
+      auth: AUTH,
       username: sessionStorage.getItem("Username"),
       email: sessionStorage.getItem("Email"),
       password: sessionStorage.getItem("Password")

@@ -71,13 +71,14 @@
 <style scoped lang = "scss">
 @import "assets/colors.scss";
 #card {
-  margin-top: 100px;
+  margin-top: 50px;
   margin-left: 20px;
   width: 300px;
 }
 #card1{
-    margin-top: 100px;
+    margin-top: 50px;
 }
+
 </style>
 
 <script>

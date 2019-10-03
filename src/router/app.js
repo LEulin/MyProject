@@ -43,7 +43,7 @@ export default {
         name: 'UpdateInfo',
         component: resolve => require(['modules/Update.vue'], resolve),
         meta: {
-            tokenRequired: true
+            tokenRequired: false
         },
     }]
 }

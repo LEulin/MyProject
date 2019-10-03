@@ -32,8 +32,9 @@ export default {
         this.user = null
         ROUTER.push('/Login')
     },
-    update() {
-        this.user = null
+    update(username,password) {
+        this.username =username;
+        this.password =password;
         ROUTER.push('/Update')
     },
     save() {
