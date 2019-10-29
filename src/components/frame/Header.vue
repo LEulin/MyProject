@@ -39,24 +39,19 @@
   border-radius: 20px;
   color: black;
   font-weight: bold;
-  font-size: 15px;
+  font-size: 10px;
   /* border: solid white; */
 }
 #signupbtn {
   border-radius: 20px;
   font-weight: bold;
-  font-size: 15px;
+  font-size: 10px;
 }
 </style>
+
 <script>
-import ROUTER from "router"
-import AUTH from 'services/auth'
+import ROUTER from "router";
 export default {
-  data(){
-    return{
-      auth: AUTH
-    }
-  },
   methods: {
     redirect(router) {
       ROUTER.push(router);

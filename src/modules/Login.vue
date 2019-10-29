@@ -52,6 +52,10 @@ h1 {
 #pass {
   color: $warning !important;
 }
+#divLogin {
+  float: right;
+  margin-right: 150px !important;
+}
 </style>
 <script>
 import AUTH from "services/auth";
@@ -88,7 +92,8 @@ export default {
         }
       }
       let link = `http://localhost:3000/db/create/$`;
-      jquery.ajax({
+      jquery
+        .ajax({
           url: link,
           method: "GET",
           headers: {

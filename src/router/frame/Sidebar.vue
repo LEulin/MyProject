@@ -1,5 +1,5 @@
 <template>
-  <sidebar-menu :menu="menu"  />
+  <sidebar-menu :menu="menu" />
 </template>
  
 <script>
@@ -15,25 +15,30 @@ export default {
         {
           href: "/Dashboard",
           title: "Dashboard",
-          icon: "fa fa-chart-area",
+          icon: "fa fa-chart-area"
         },
         {
           href: "/Subjects",
           title: "Subjects",
-          icon: "fa fa-chart-area",
+          icon: "fa fa-chart-area"
         },
         {
           href: "/PersonalInfo",
           title: "Personal Info",
-          icon: "fa fa-chart-area",
+          icon: "fa fa-chart-area"
+        },
+        {
+          href: "/Timeline",
+          title: "Timeline",
+          icon: "fa fa-chart-area"
         },
         {
           href: "/Login",
           title: "Logout",
-          icon: "fa fa-chart-area",
+          icon: "fa fa-chart-area"
         }
       ]
-    }; 
+    };
   }
 };
 </script> 

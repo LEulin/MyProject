@@ -1,22 +1,24 @@
 <template>
   <div id="app">
     <Header></Header>
-    <Sidebar id="side"
-    v-show="$route.path === '/Dashboard' || $route.path === '/Subjects' || $route.path === '/PersonalInfo' || $route.path === '/Update'? true : false"></Sidebar>
+    <Sidebar
+      id="side"
+      v-show="$route.path === '/Dashboard' || $route.path === '/Subjects' || $route.path === '/PersonalInfo' || $route.path === '/Update'? true : false"
+    ></Sidebar>
     <AppBody></AppBody>
   </div>
 </template>
 <style scoped lang="scss">
 @import "assets/colors.scss";
-#app{
-  background-image: $background-image !important;
-  size: $size !important;
+#app {
+  // background-image: $background-image !important;
   background-repeat: $backgroud-repeat !important;
+  background-size: cover !important;
   overflow: $overflow !important;
   height: $height !important;
-  max-height: $max-height !important;
+  // max-height: $max-height !important;
 }
-#side{
+#side {
   margin-top: 55px;
   padding-bottom: 50px;
 }

@@ -1,13 +1,5 @@
 let beforeEnter = (to, from, next) => {
-    if (to.meta.tokenRequired === true) {
-        if (sessionStorage.getItem('Password') !== null) {
-            next();
-        } else {
-            next({ path: '/Login' })
-        }
-    } else {
         next()
-    }
 }
 var devRoutes = []
 let app = require('./app.js')
@@ -18,9 +10,9 @@ for (let x = 0; x < devRoutes.length; x++) {
 
 let routes = [
     {
-        path: '/',
+        path: '/home',
         name: 'home',
-        component: resolve => require(['modules/Login.vue'], resolve),
+        component: resolve => require(['modules/Home.vue'], resolve),
         beforeEnter: beforeEnter
     }
 ]

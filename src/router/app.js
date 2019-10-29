@@ -15,35 +15,43 @@ export default {
             tokenRequired: false
         }
     }, {
-        path: '/Dashboard',
-        name: 'Dashboard',
-        component: resolve => require(['modules/Dashboard.vue'], resolve),
+        path: '/Home',
+        name: 'Home',
+        component: resolve => require(['modules/Home.vue'], resolve),
         meta: {
             tokenRequired: true
         },
-    },
-    {
-        path: '/Subjects',
-        name: 'Subjects',
-        component: resolve => require(['modules/Subjects.vue'], resolve),
-        meta: {
-            tokenRequired: true
-        }
-    },
-    {
-        path: '/PersonalInfo',
-        name: 'PersonalInfo',
-        component: resolve => require(['modules/PersonalInfo.vue'], resolve),
-        meta: {
-            tokenRequired: true
-        }
-    },
-    {
-        path: '/Update',
-        name: 'UpdateInfo',
-        component: resolve => require(['modules/Update.vue'], resolve),
-        meta: {
-            tokenRequired: false
-        },
+    // {
+    //     path: '/Subjects',
+    //     name: 'Subjects',
+    //     component: resolve => require(['modules/Subjects.vue'], resolve),
+    //     meta: {
+    //         tokenRequired: true
+    //     }
+    // },
+    // {
+    //     path: '/PersonalInfo',
+    //     name: 'PersonalInfo',
+    //     component: resolve => require(['modules/PersonalInfo.vue'], resolve),
+    //     meta: {
+    //         tokenRequired: true
+    //     }
+    // },
+    // {
+    //     path: '/Update',
+    //     name: 'UpdateInfo',
+    //     component: resolve => require(['modules/Update.vue'], resolve),
+    //     meta: {
+    //         tokenRequired: false
+    //     }
+    //     },
+    //     {
+    //         path: '/Timeline',
+    //         name: 'Timeline',
+    //         component: resolve => require(['modules/Timeline.vue'], resolve),
+    //         meta: {
+    //             tokenRequired: false
+    //         },
+    
     }]
 }

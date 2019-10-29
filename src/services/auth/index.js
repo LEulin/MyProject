@@ -2,6 +2,7 @@ import ROUTER from 'router'
 export default {
     user: null,
     registeredUser: [],
+    postmessage: [],
     setUser(user) {
         this.user = user
     },
@@ -40,6 +41,17 @@ export default {
     save() {
         this.user = null
         ROUTER.push('/PersonalInfo')
-    }
+    },
+    postText(text){
+        this.postmessage.push({
+            text : text
+        })
+
+    },
+    // post(text){
+
+
+    // },
+    // remove(text){
 
 }

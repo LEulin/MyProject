@@ -2,7 +2,7 @@
   <center>
     <div
       data-toggle="collapse"
-      id="divFrom"
+      id="divForm"
       class="col-sm-3 my-sm-5 border rounded"
       style="margin-left:0.5%"
     >
@@ -94,6 +94,10 @@ h1 {
 p {
   color: $warning !important;
 }
+#divForm{
+  float: right !important;
+  margin-right: 150px !important;
+}
 </style>
 <script>
 import AUTH from "services/auth";
@@ -140,6 +144,8 @@ export default {
       }
 
       let link = `http://localhost:3000/db/create/${this.content.username}/ ${this.content.email}/${this.content.password}`;
+      // let link = `http://localhost:3000/db/update/${this.content.username}/ ${this.content.email}/${this.content.password}`;
+      // let link = `http://localhost:3000/db/delete/${this.content.username}/ ${this.content.email}/${this.content.password}`;
       jquery.ajax({
           url: link,
           method: "GET",
